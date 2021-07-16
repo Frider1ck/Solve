@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ccc.css">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+    </style>
+    <div class="tabs">
+        <div class="tab suka">Tab 1</div>
+        <div class="tab">Tab 1</div>
+        <div class="tab">Tab 1</div>
+        <div class="tab_content">1</div>
+        <div class="tab_content">2</div>
+        <div class="tab_content">3</div>
+    </div>
+    <script>
+        var tab;
+        var tabs_content;
+
+        window.onload = function () {
+            tab = document.getElementsByClassName('tab')
+            tab_content = document.getElementsByClassName('tab_content')
+            hideContent(1)
+        }
+
+        function hideContent(a) {
+            for(var i = a; i<tab_content.length;i++) {
+                tab_content[i].classList.remove('show');
+                tab_content[i].classList.add('hide');
+                tab_content[i].classList.remove('suka');
+            }
+        }
+
+        document.getElementsByClassName('tabs').onclick= function(event) {
+            let target = event.target;
+            for(var i = 0; i<tab.length;i++) {
+                if(target == tab[i]) showContent(i)
+                break;
+            }
+        }
+
+        function showContent(i) {
+            if(tab_content[i].classList.contains('hide')) {
+            hideContent(0);
+            tab_content[i].classList.add('suka');
+            tab_content[i].classList.remove('hide');
+            tab_content[i].classList.add('show');
+            }
+        }
+    </script>
+</body>
+</html>
