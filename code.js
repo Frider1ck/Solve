@@ -1,3 +1,4 @@
+//Код решения 1 задачи
 function compareTriplets(a, b) {
     let arr = [0,0];
 
@@ -13,7 +14,7 @@ function compareTriplets(a, b) {
 
     return arr;
 }
-
+//Код решения 2 задачи
 function plusMinus(arr) {
     let positive = 0
     let negative = 0
